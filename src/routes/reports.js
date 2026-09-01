@@ -1,10 +1,12 @@
 const express = require('express');
 const multer = require('multer');
+const { storage } = require('../config/cloudinary');
 const reportsController = require('../controllers/reportsController');
 
 const router = express.Router();
 
 const upload = multer({
+  storage,
   limits: { fileSize: 5 * 1024 * 1024 },
   fileFilter: (req, file, cb) => {
     if (['image/jpeg', 'image/png'].includes(file.mimetype)) {

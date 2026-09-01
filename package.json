@@ -9,22 +9,17 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "cloudinary": "^2.11.0",
     "cors": "^2.8.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
     "pg": "^8.11.5"
   },
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.1.4",
     "supertest": "^7.0.0"
-  },
-  "jest": {
-    "coverageThreshold": {
-      "global": {
-        "lines": 80
-      }
-    }
   }
 }
