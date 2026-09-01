@@ -1,11 +1,11 @@
 const db = require('../db');
 
-async function create({ endereco, severidade, descricao, foto_url }) {
+async function create({ tipo, endereco, severidade, descricao, foto_url }) {
   const { rows } = await db.query(
-    `INSERT INTO reports (endereco, severidade, descricao, foto_url)
-     VALUES ($1, $2, $3, $4)
+    `INSERT INTO reports (tipo, endereco, severidade, descricao, foto_url)
+     VALUES ($1, $2, $3, $4, $5)
      RETURNING *`,
-    [endereco, severidade, descricao || null, foto_url]
+    [tipo, endereco, severidade || null, descricao || null, foto_url]
   );
   return rows[0];
 }
