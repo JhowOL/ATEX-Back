@@ -71,10 +71,13 @@ Definidas em `.env` (veja [`.env.example`](.env.example)):
 
 | Variável | Descrição |
 |---|---|
-| `PORT` | Porta da API (padrão `3000`) |
-| `NODE_ENV` | `development` ou `production` — controla a política de CORS |
-| `DATABASE_URL` | Connection string do PostgreSQL (Neon) |
-| `ALLOWED_ORIGINS` | Origens permitidas pelo CORS em produção, separadas por vírgula |
+| `PORT` | Porta da API (Railway injeta automaticamente) |
+| `NODE_ENV` | `production` em produção — controla a política de CORS |
+| `DATABASE_URL` | Connection string do PostgreSQL (Neon — branch main) |
+| `ALLOWED_ORIGINS` | URL do front-end em produção (ex: `https://seu-front.netlify.app`) |
+| `CLOUDINARY_CLOUD_NAME` | Cloud name do Cloudinary |
+| `CLOUDINARY_API_KEY` | API Key do Cloudinary |
+| `CLOUDINARY_API_SECRET` | API Secret do Cloudinary |
 
 `scripts/migrate.js` também reconhece `DATABASE_URL_PRODUCTION` para aplicar as migrations no banco de produção junto com o de desenvolvimento.
 
